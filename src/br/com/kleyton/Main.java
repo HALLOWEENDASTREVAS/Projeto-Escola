@@ -29,6 +29,7 @@ public class Main {
         Date dataMatri,dataNasci;
         float valorHr;
         int cod,matricula,cargaHr;
+        Disciplina disci;
         
         nome=JOptionPane.showInputDialog("Informe o seu nome: ");
         rg=JOptionPane.showInputDialog("Informe o seu RG: ");
@@ -47,7 +48,8 @@ public class Main {
             matricula =Integer.parseInt(JOptionPane.showInputDialog("Informe o número da matricula: "));
             dataMatri=sdf.parse(JOptionPane.showInputDialog("Informe a data de matricula: "));
             
-            status=JOptionPane.showInputDialog("Informe o Status da disciplina: ").charAt(0);
+            
+            status=JOptionPane.showInputDialog("Informe o Status da disciplina A(ativo) ou I(inativo): ").charAt(0);
             departamento=JOptionPane.showInputDialog("Informe o departamento da disciplina: ");
             
             Aluno alu = new Aluno(matricula, dataMatri, nome, rg, cpf, dataNasci);

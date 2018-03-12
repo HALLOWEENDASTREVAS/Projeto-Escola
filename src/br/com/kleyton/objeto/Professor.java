@@ -14,7 +14,7 @@ import java.util.Date;
  */
 public class Professor extends Pessoa{
   
-   private ArrayList <Disciplina> disciplina;
+   private ArrayList <Disciplina> disciplina = new ArrayList<Disciplina>() ;
    private int cargaHr;
    private float valorHr;
    private float salario;

@@ -16,7 +16,7 @@ public class Aluno extends Pessoa{
    
     private int matricula;
     private Date dataMatri;
-    private ArrayList<Disciplina>disciplina;
+    private ArrayList<Disciplina>disciplina = new ArrayList<Disciplina>();
 
     @Override
     public String toString() {
