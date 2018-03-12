@@ -20,7 +20,7 @@ public abstract class Pessoa {
    private Date dataNasci;
    private int idade;
 
-    public Pessoa(String nome, String rg, String cpf, Date dataNasci, int idade) {
+    public Pessoa(String nome, String rg, String cpf, Date dataNasci) {
         this.nome = nome;
         this.rg = rg;
         this.cpf = cpf;
@@ -30,7 +30,7 @@ public abstract class Pessoa {
 
     @Override
     public String toString() {
-        return "Pessoa{" + "nome=" + nome + ", rg=" + rg + ", cpf=" + cpf + ", dataNasci=" + dataNasci + ", idade=" + idade + '}';
+        return "Pessoa{" + "\nnome=" + nome + ",\n rg=" + rg + ",\n cpf=" + cpf + ",\n dataNasci=" + dataNasci + ",\n idade=" + idade + '}';
     }
     
     

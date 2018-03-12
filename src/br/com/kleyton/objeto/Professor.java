@@ -19,23 +19,24 @@ public class Professor extends Pessoa{
    private float valorHr;
    private float salario;
 
-    public Professor(ArrayList<Disciplina> disciplina, int cargaHr, float valorHr, float salario, String nome, String rg, String cpf, Date dataNasci, int idade) {
-        super(nome, rg, cpf, dataNasci, idade);
-        this.disciplina = disciplina;
+    public Professor(int cargaHr, float valorHr, String nome, String rg, String cpf, Date dataNasci) {
+        super(nome, rg, cpf, dataNasci);
         this.cargaHr = cargaHr;
         this.valorHr = valorHr;
-        this.salario = this.calculaSalario(cargaHr, valorHr);
+        this.salario=this.calculaSalario(cargaHr, valorHr);
     }
 
     @Override
     public String toString() {
-        return "Professor{" + "disciplina=" + disciplina + ", cargaHr=" + cargaHr + ", valorHr=" + valorHr + ", salario=" + salario + '}';
+        return super.toString()+"\nProfessor{" + "\ndisciplina=" + disciplina + ",\n cargaHr=" + cargaHr + ",\n valorHr=" + valorHr + ",\n salario=" + salario + '}';
     }
+
     
-    public float calculaSalario(int cargaHr, float valorHr){
+    
+      public float calculaSalario(int cargaHr, float valorHr){
         return cargaHr * valorHr;
     }
-   
+ 
     public ArrayList<Disciplina> getDisciplina() {
         return disciplina;
     }
@@ -68,8 +69,5 @@ public class Professor extends Pessoa{
         this.salario = salario;
     }
 
-    
-   
-   
    
 }

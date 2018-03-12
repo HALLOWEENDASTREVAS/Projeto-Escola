@@ -20,17 +20,18 @@ public class Aluno extends Pessoa{
 
     @Override
     public String toString() {
-        return "Aluno{" + "matricula=" + matricula + ", dataMatri=" + dataMatri + ", disciplina=" + disciplina + '}';
+        return super.toString()+"Aluno{" + "\nmatricula=" + matricula + ",\n dataMatri=" + dataMatri + ",\n disciplina=" + disciplina + '}';
     }
 
-    public Aluno(int matricula, Date dataMatri, ArrayList<Disciplina> disciplina, String nome, String rg, String cpf, Date dataNasci, int idade) {
-        super(nome, rg, cpf, dataNasci, idade);
+    
+ 
+    
+    public Aluno(int matricula, Date dataMatri, String nome, String rg, String cpf, Date dataNasci) {
+        super(nome, rg, cpf, dataNasci);
         this.matricula = matricula;
         this.dataMatri = dataMatri;
-        this.disciplina = disciplina;
     }
     
-
     public int getMatricula() {
         return matricula;
     }
@@ -54,6 +55,5 @@ public class Aluno extends Pessoa{
     public void setDisciplina(ArrayList<Disciplina> disciplina) {
         this.disciplina = disciplina;
     }
-    
     
 }
