@@ -30,7 +30,7 @@ public abstract class Pessoa {
 
     @Override
     public String toString() {
-        return "Pessoa{" + "\nnome=" + nome + ",\n rg=" + rg + ",\n cpf=" + cpf + ",\n dataNasci=" + dataNasci + ",\n idade=" + idade + '}';
+        return "Pessoa{" + "\nnome=" + nome + ", rg=" + rg + ", cpf=" + cpf + ", dataNasci=" + dataNasci + ", idade=" + idade + '}';
     }
     
     

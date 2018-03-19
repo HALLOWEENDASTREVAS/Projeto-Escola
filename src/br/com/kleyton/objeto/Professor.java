@@ -28,7 +28,7 @@ public class Professor extends Pessoa{
 
     @Override
     public String toString() {
-        return super.toString()+"\nProfessor{" + "\ndisciplina=" + disciplina + ",\n cargaHr=" + cargaHr + ",\n valorHr=" + valorHr + ",\n salario=" + salario + '}';
+        return super.toString()+"\nProfessor{" + "disciplina=" + disciplina + ", cargaHr=" + cargaHr + ", valorHr=" + valorHr + ", salario=" + salario + '}';
     }
 
     

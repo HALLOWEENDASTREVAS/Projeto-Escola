@@ -20,7 +20,7 @@ public class Aluno extends Pessoa{
 
     @Override
     public String toString() {
-        return super.toString()+"Aluno{" + "\nmatricula=" + matricula + ",\n dataMatri=" + dataMatri + ",\n disciplina=" + disciplina + '}';
+        return super.toString()+"\nAluno{" + "matricula=" + matricula + ", dataMatri=" + dataMatri + ", disciplina=" + disciplina + '}';
     }
 
     
