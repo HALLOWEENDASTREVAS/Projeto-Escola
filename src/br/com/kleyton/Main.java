@@ -29,7 +29,7 @@ public class Main {
         ArrayList<Disciplina> materias = new ArrayList<>();
         ArrayList<Aluno> alunos = new ArrayList<>();
         ArrayList<Professor> professores = new ArrayList<>();
-        
+
         SimpleDateFormat sdf = new SimpleDateFormat("dd/MM/yyyy");
 
         do {
@@ -37,7 +37,8 @@ public class Main {
                     + "1: Cadatro Aluno. \n"
                     + "2: Cadatro Professor. \n"
                     + "3: Cadatro Disciplina. \n"
-                    + "4: Sair."));
+                    + "4: Consultar.\n"
+                    + "5: Sair."));
             switch (escMenu) {
                 case 1: {
 
@@ -47,21 +48,22 @@ public class Main {
                     int matricula = Integer.parseInt(JOptionPane.showInputDialog("Informe o número da matricula: "));
                     Date dataMatri = sdf.parse(JOptionPane.showInputDialog("Informe a data de matricula: "));
                     Date dataNasci = sdf.parse(JOptionPane.showInputDialog("Informe a sua data ne nascimento: "));
-                    
+
                     alunos.add(new Aluno(matricula, dataMatri, nome, rg, cpf, dataNasci));
-                    
-                    if (JOptionPane.showConfirmDialog(null, "O aluno ja se matriculou em alguma disciplina: ") == 0 ) {
-                       String materiasExist = "";
+
+                    if (JOptionPane.showConfirmDialog(null, "O aluno ja se matriculou em alguma disciplina: ") == 0) {
+                        String materiasExist = "";
                         for (Disciplina materia : materias) {
                             materiasExist += materias.indexOf(materia) + "" + materia.getNome() + "\n";
                         }
-                        do {                            
-                            int esc = Integer.parseInt(JOptionPane.showInputDialog("-- Informe a máteria -- \n" + materiasExist));
+                        do {
+                            int esc = Integer.parseInt(JOptionPane.showInputDialog("-- Informe a Disciplina -- \n" + materiasExist));
                             alunos.get(alunos.size() - 1).getDisciplina().add(materias.get(esc));
-                        } while (JOptionPane.showConfirmDialog(null, "A outra matéria para cadastrar ?") == 0);
+                        } while (JOptionPane.showConfirmDialog(null, "Á outra Disciplina para cadastrar ?") == 0);
                     }
-                    
+
                     break;
+
                 }
                 case 2: {
 
@@ -73,14 +75,14 @@ public class Main {
                     Date dataNasci = sdf.parse(JOptionPane.showInputDialog("Informe a sua data ne nascimento: "));
 
                     professores.add(new Professor(cargaHr, 0, nome, rg, cpf, dataNasci));
-                    
-                    if (JOptionPane.showConfirmDialog(null, "O professor lessiona alguma disciplina: ") == 0 ) {
+
+                    if (JOptionPane.showConfirmDialog(null, "O professor lessiona alguma disciplina: ") == 0) {
                         String materiasExist = "";
                         for (Disciplina materia : materias) {
                             materiasExist += materias.indexOf(materia) + "" + materia.getNome() + "\n";
                         }
-                        do {                            
-                            int esc = Integer.parseInt(JOptionPane.showInputDialog("-- Informe a máteria -- \n" + materiasExist));
+                        do {
+                            int esc = Integer.parseInt(JOptionPane.showInputDialog("-- Informe a disciplina -- \n" + materiasExist));
                             professores.get(professores.size() - 1).getDisciplina().add(materias.get(esc));
                         } while (JOptionPane.showConfirmDialog(null, "O professor lessiona mais alguma disciplina ?") == 0);
                     }
@@ -89,17 +91,56 @@ public class Main {
                 case 3: {
 
                     do {
-                    
+
                         String nome = JOptionPane.showInputDialog("Informe o nome da disciplina: ");
                         String departamento = JOptionPane.showInputDialog("Informe o departamento da disciplina: ");
                         char status = JOptionPane.showInputDialog("Informe o Status da disciplina A(ativo) ou I(inativo): ").charAt(0);
                         materias.add(new Disciplina(nome, departamento, status));
-                        
-                    } while ((JOptionPane.showConfirmDialog(null, "Deseja continuar?"))==0);
+
+                    } while ((JOptionPane.showConfirmDialog(null, "Deseja cadastrar mais alguma Disciplina?")) == 0);
                     break;
+
+
                 }
                 case 4: {
+                    int con = Integer.parseInt(JOptionPane.showInputDialog("Consultar:\n "
+                                                                         + "1-aluno.\n"
+                                                                         + "2-professor.\n"
+                                                                         + "3-Disciplinas."));
+                    switch(con){
+                        case 1:{
+                            JOptionPane.showMessageDialog(null, alunos.toString());
+                            break;
+                        }    
+                        case 2:{
+                            JOptionPane.showMessageDialog(null, professores.toString());
+                            break;   
+                        }
+                        case 3:{
+                            int dez = Integer.parseInt(JOptionPane.showInputDialog("Você deseja consultar por:\n"
+                                                                                 + "1-Código.\n"
+                                                                                 + "2-nome."));
+                            switch (dez){
+                                case 1:{
+                                    int conDisci = Integer.parseInt(JOptionPane.showInputDialog("Qual o código da disciplina: "));
+                                    JOptionPane.showMessageDialog(null, materias.get(conDisci));
+                            
+                                    break;
+                                }
+                                case 2:{
+                                    
+                                    
+                                    break;
+                                }
+                            }
+                            break;
+                        }
+                    }
                     break;
+
+               }
+                case 5: {
+                     break;
                 }
                 default: {
 
@@ -109,8 +150,10 @@ public class Main {
                 }
             }
 
-        } while (escMenu != 4);
-
+        
+    }
+    while (escMenu!= 5);
+    JOptionPane.showMessageDialog(null, "!!Um bom dia e Adeus!! ");
     }
 
 }
