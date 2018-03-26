@@ -109,11 +109,72 @@ public class Main {
                                                                          + "3-Disciplinas."));
                     switch(con){
                         case 1:{
-                            JOptionPane.showMessageDialog(null, alunos.toString());
+                            int dez = Integer.parseInt(JOptionPane.showInputDialog("Você deseja consultar por:\n"
+                                                                                 + "1-Código.\n"
+                                                                                 + "2-nome."));
+                            switch (dez){
+                                
+                                case 1:{
+                                    int conAluno = Integer.parseInt(JOptionPane.showInputDialog("Qual o código do(a)aluno(a) para consulta: "));
+                                    JOptionPane.showMessageDialog(null, materias.get(conAluno));
+                            
+                                    break;
+                                }
+                                case 2:{
+                                    String ver = JOptionPane.showInputDialog("Dijite o nome do(a) aluno(a): ");
+                                    String alunosExist = "";
+                                    for (Aluno aluno : alunos) {
+                                    alunosExist += alunos.indexOf(aluno) + "" + aluno.getNome() + "\n";
+                                    }
+                                    for (int i = 0; i < alunos.size(); i++) {
+                                    
+                                        if (alunos.get(i).getClass().equals(ver)) {
+                                        } else {
+                                            JOptionPane.showMessageDialog(null, alunos.get(i).toString());
+                                        }
+                                    }
+                                    break;
+                                }
+                                default:{
+                                    JOptionPane.showMessageDialog(null, "!!Opção inválida!!");
+                                    break;
+                                }
+                            }
                             break;
-                        }    
+                            }    
                         case 2:{
-                            JOptionPane.showMessageDialog(null, professores.toString());
+                            int dez = Integer.parseInt(JOptionPane.showInputDialog("Você deseja consultar por:\n"
+                                                                                 + "1-Código.\n"
+                                                                                 + "2-nome."));
+                            switch (dez){
+                                
+                                case 1:{
+                                    int conProf = Integer.parseInt(JOptionPane.showInputDialog("Qual o código do(a) profesor(ra) para consulta: "));
+                                    JOptionPane.showMessageDialog(null, professores.get(conProf));
+                            
+                                    break;
+                                }
+                                case 2:{
+                                    String ver = JOptionPane.showInputDialog("Dijite o nome do(a) professor(ra): ");
+                                    String profsExist = "";
+                                    for (Professor professor : professores) {
+                                    profsExist += professores.indexOf(professor) + "" + professor.getNome() + "\n";
+                                    }
+                                    for (int i = 0; i < professores.size(); i++) {
+                                    
+                                        if (professores.get(i).getClass().equals(ver)) {
+                                           
+                                        } else {
+                                            JOptionPane.showMessageDialog(null, professores.get(i).toString());
+                                        }
+                                    }
+                                    break;
+                                }
+                                default:{
+                                    JOptionPane.showMessageDialog(null, "!!Opção inválida!!");
+                                    break;
+                                }
+                            }
                             break;   
                         }
                         case 3:{
@@ -122,14 +183,28 @@ public class Main {
                                                                                  + "2-nome."));
                             switch (dez){
                                 case 1:{
-                                    int conDisci = Integer.parseInt(JOptionPane.showInputDialog("Qual o código da disciplina: "));
+                                    int conDisci = Integer.parseInt(JOptionPane.showInputDialog("Qual o código da disciplina para consulta: "));
                                     JOptionPane.showMessageDialog(null, materias.get(conDisci));
                             
                                     break;
                                 }
                                 case 2:{
+                                    String ver = JOptionPane.showInputDialog("Dijite o nome da disciplina: ");
+                                    String materiasExist = "";
+                                    for (Disciplina materia : materias) {
+                                    materiasExist += materias.indexOf(materia) + "" + materia.getNome() + "\n";
+                                    }
+                                    for (int i = 0; i < materias.size(); i++) {
                                     
-                                    
+                                        if (materias.get(i).getClass().equals(ver)) {
+                                        } else {
+                                            JOptionPane.showMessageDialog(null, materias.get(i).toString());
+                                        }
+                                    }
+                                    break;
+                                }
+                                default:{
+                                    JOptionPane.showMessageDialog(null, "!!Opção inválida!!");
                                     break;
                                 }
                             }
@@ -153,7 +228,7 @@ public class Main {
         
     }
     while (escMenu!= 5);
-    JOptionPane.showMessageDialog(null, "!!Um bom dia e Adeus!! ");
+    JOptionPane.showMessageDialog(null, "!! Tenha Um Bom Dia !! ");
     }
 
 }
